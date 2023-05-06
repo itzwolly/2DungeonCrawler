@@ -42,7 +42,7 @@ public class GameObject extends PyObject {
 		_name = pName;
 		_tag = "Untagged";
 		_imagePath = "";
-		_labels = new ArrayList<String>();
+		_labels = new ArrayList<>();
 		_size = new Vector2();
 		Position = new Vector2();
 		Velocity = new Vector2();
@@ -113,7 +113,7 @@ public class GameObject extends PyObject {
 	
 	@SuppressWarnings("unused")
 	private static long getDuplicateNameCount(String pName) {
-		return _gameObjects.stream().filter(o -> (o.GetName() == pName)).count();
+		return _gameObjects.stream().filter(o -> (o.GetName().equals(pName))).count();
 	}
 
 	public static void printGameObjects() {

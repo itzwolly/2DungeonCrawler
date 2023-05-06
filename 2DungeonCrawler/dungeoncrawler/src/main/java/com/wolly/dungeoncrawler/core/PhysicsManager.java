@@ -7,11 +7,11 @@ public class PhysicsManager {
 		// Empty
 	}
 	
-//	public void update() {
-//		for (GameObject obj : GameObject.getGameObjects()) {
-//			obj.Position.Add(obj.Velocity);
-//		}
-//	}
+	public void update() {
+		for (GameObject obj : GameObject.getGameObjects()) {
+			obj.Position.Add(obj.Velocity);
+		}
+	}
 	
 	public static PhysicsManager GetInstance() {
 		if (_instance == null) {

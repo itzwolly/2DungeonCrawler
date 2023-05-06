@@ -138,10 +138,6 @@ public class Debug {
 	}
 	
 	public static void Log(String pMessage, ThreatLevel pThreatLevel) {
-		if (!LOG_FILTER[pThreatLevel.GetLevel()]) {
-			return;
-		}
-		
 		String s = "[" + pThreatLevel.toString() + "] " + pMessage;
 		switch(pThreatLevel) {
 			case Debug:

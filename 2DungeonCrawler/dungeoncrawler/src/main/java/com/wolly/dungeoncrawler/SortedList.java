@@ -6,7 +6,7 @@ import java.util.LinkedList;
 
 public class SortedList<E> extends LinkedList<E> {
 	private static final long serialVersionUID = 4871797622763970617L;
-	private Comparator<E> _comparator;
+	private final Comparator<E> _comparator;
 
     public SortedList(final Comparator<E> pComparator) {
         this._comparator = pComparator;
@@ -16,7 +16,7 @@ public class SortedList<E> extends LinkedList<E> {
     @Override
     public boolean add(E e) {
     	final boolean result = super.add(e);
-    	Collections.sort(this, _comparator);
+    	sort(_comparator);
     	return result;
     }
     

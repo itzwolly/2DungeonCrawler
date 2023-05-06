@@ -22,12 +22,12 @@ public class ScriptHandler {
 	}
 	
 	private void executeImports() {
-		for(BeanDefinition bd : Utils.GetClassesByAnnotation(Config.BasePackage, ScriptModule.class, false)) {
+		for (BeanDefinition bd : Utils.GetClassesByAnnotation(Config.BasePackage, ScriptModule.class, false)) {
 			String fullPackagePath = bd.getBeanClassName();
 			String className = Utils.GetClassNameFromFullPackagePath(fullPackagePath);
 			String packagePath = Utils.GetPackagePathFromFullPackagePath(fullPackagePath);
 			
-			if (className != "" && packagePath != "") {
+			if (!className.equals("") && !packagePath.equals("")) {
 				_interpreter.exec("from " + packagePath + " import " + className);
 			}
 		}
